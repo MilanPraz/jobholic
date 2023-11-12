@@ -9,17 +9,17 @@ const chartRoutes = require("./routes/chartRoute");
 const userRoutes = require("./routes/userRoute");
 const authRoutes = require("./routes/authRoute");
 const { getJob } = require("./controller/job");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 app.use(cors());
 
 mongoose
-  .connect(
-    "mongodb+srv://milanpraz77:milanpraz5454@cluster0.g8ho0on.mongodb.net/jobholic",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.MONGOODB_CONNECT_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("connected to db"))
   .catch((err) => console.log(err));
 // mongoose
