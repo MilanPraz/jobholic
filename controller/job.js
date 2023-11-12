@@ -3,7 +3,6 @@ const jobModel = require("../model/job");
 
 const getJob = async (req, res, next) => {
   try {
-    console.log("wtffff");
     let search = req.query.search || "";
     let jobType = req.query.job_type || "";
     let jobLevel = req.query.job_level || "";
