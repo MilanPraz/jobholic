@@ -98,7 +98,7 @@ const getJob = async (req, res, next) => {
     ]);
 
     console.log("job is here", jobs);
-    res.status(200).send(jobs);
+    return res.status(200).send(jobs);
   } catch (err) {
     next(err);
   }
@@ -108,7 +108,7 @@ const getJobById = async (req, res, next) => {
   try {
     const job = await jobModel.findById(req.params.id);
     // console.log(job);
-    res.status(200).send(job);
+    return res.status(200).send(job);
   } catch (err) {
     next(err);
   }
@@ -119,7 +119,7 @@ const getHotJob = async (req, res, next) => {
     // res.send("dsadasdasda");
     const allhotjobs = await jobModel.find({ type: "hot" });
     // console.log(allhotjobs);
-    res.status(200).send(allhotjobs);
+    return res.status(200).send(allhotjobs);
   } catch (err) {
     next(err);
   }
