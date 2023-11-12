@@ -33,6 +33,8 @@ const getJob = async (req, res, next) => {
     // console.log("search is ", search);
     // console.log("jobtype ", jobType);
     console.log("here is detail", req.query);
+    const temp = req.params.dev;
+    console.log(temp);
     const jobs = await jobModel.aggregate([
       {
         //match work as find
