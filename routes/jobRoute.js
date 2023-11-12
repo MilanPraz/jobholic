@@ -13,7 +13,7 @@ const {
 } = require("../controller/job");
 const router = express.Router();
 
-router.get("/api/jobs", getJob);
+router.get("/jobs", getJob);
 router.get("/api/jobs/:id", getJobById);
 router.post("/api/jobs", auth, createJob);
 router.delete("/api/jobs/delete/:id", auth, deleteJob);
