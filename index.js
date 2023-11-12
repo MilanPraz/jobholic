@@ -29,6 +29,10 @@ mongoose
 //   .then(() => console.log("connected to db"))
 //   .catch((err) => console.log(err));
 
+app.use("/", (req, res) => {
+  res.json({ msg: "hello friends" });
+});
+
 app.use(express.json());
 
 app.use(jobRoutes);
@@ -38,7 +42,7 @@ app.use(authRoutes);
 app.use(express.static("public")); // it will allow any device to use public folder publicly
 
 app.use((req, res) => {
-  res.status(404).send({ msg: "resource/page not found" });
+  res.status(404).send({ msg: "resource/page nottttt found" });
 });
 app.use(handleError);
 
