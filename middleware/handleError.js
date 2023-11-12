@@ -10,7 +10,7 @@ const handleError = async (err, req, res, next) => {
       if (err.name === "ValidationError") {
         return res.status(400).send(dataa);
       }
-      res.status(500).send({ msg: "server Error", error: err });
+      return res.status(500).send({ msg: "server Error", error: err });
     }
   } catch (err) {
     // return res.send({ msg: err });
