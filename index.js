@@ -1,0 +1,36 @@
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const mongoose = require("mongoose");
+const handleError = require("./middleware/handleError");
+
+const jobRoutes = require("./routes/jobRoute");
+const chartRoutes = require("./routes/chartRoute");
+const userRoutes = require("./routes/userRoute");
+const authRoutes = require("./routes/authRoute");
+
+app.use(cors());
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/jobholic", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("connected to db"))
+  .catch((err) => console.log(err));
+app.use(express.json());
+
+app.use(jobRoutes);
+app.use(chartRoutes);
+app.use(userRoutes);
+app.use(authRoutes);
+app.use(express.static("public")); // it will allow any device to use public folder publicly
+
+app.use((req, res) => {
+  res.status(404).send({ msg: "resource/page not found" });
+});
+app.use(handleError);
+
+app.listen(8008, () => {
+  console.log("listening to port 8008");
+});
