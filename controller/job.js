@@ -96,7 +96,7 @@ const getJob = async (req, res, next) => {
         },
       },
     ]);
-
+    console.log("yoyoyoyoyo");
     console.log("job is here", jobs);
     return res.status(200).send(jobs);
   } catch (err) {
