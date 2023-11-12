@@ -8,6 +8,7 @@ const jobRoutes = require("./routes/jobRoute");
 const chartRoutes = require("./routes/chartRoute");
 const userRoutes = require("./routes/userRoute");
 const authRoutes = require("./routes/authRoute");
+const { getJob } = require("./controller/job");
 
 app.use(cors());
 
@@ -33,6 +34,7 @@ app.use("/", (req, res) => {
   res.json({ msg: "hello friends" });
 });
 
+app.get("/jobs", getJob);
 app.use(express.json());
 
 app.use(jobRoutes);
