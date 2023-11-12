@@ -30,9 +30,9 @@ mongoose
 //   .then(() => console.log("connected to db"))
 //   .catch((err) => console.log(err));
 
-// app.use("/", (req, res) => {
-//   res.json({ msg: "hello friends" });
-// });
+app.get("/", (req, res) => {
+  res.json({ msg: "hello friends" });
+});
 
 app.get("/jobs", getJob);
 app.use(express.json());
