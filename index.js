@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
   res.json({ msg: "hello friends im here hai" });
 });
 
-app.get("/jobs", getJob);
+// app.get("/jobs", getJob);
 app.use(express.json());
 
 app.use(jobRoutes);
@@ -48,6 +48,6 @@ app.use((req, res) => {
 });
 app.use(handleError);
 
-app.listen(8008, () => {
+app.listen(process.env.PORT, () => {
   console.log("listening to port 8008");
 });

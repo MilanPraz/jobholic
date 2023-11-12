@@ -85,7 +85,7 @@ const barDiagram = async (req, res, next) => {
         barArray[2].number += 1;
       }
     });
-    res.send(barArray);
+    return res.send(barArray);
   } catch (err) {
     next(err);
   }
