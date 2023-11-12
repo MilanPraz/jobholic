@@ -12,12 +12,23 @@ const authRoutes = require("./routes/authRoute");
 app.use(cors());
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/jobholic", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://milanpraz77:milanpraz5454@cluster0.g8ho0on.mongodb.net/jobholic",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => console.log("connected to db"))
   .catch((err) => console.log(err));
+// mongoose
+//   .connect("mongodb://127.0.0.1:27017/jobholic", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log("connected to db"))
+//   .catch((err) => console.log(err));
+
 app.use(express.json());
 
 app.use(jobRoutes);
