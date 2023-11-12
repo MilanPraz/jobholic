@@ -48,6 +48,6 @@ app.use((req, res) => {
 });
 app.use(handleError);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 8008, () => {
   console.log("listening to port 8008");
 });
