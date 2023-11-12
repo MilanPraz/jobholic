@@ -31,7 +31,7 @@ mongoose
 //   .catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-  res.json({ msg: "hello friends" });
+  res.json({ msg: "hello friends im here hai" });
 });
 
 app.get("/jobs", getJob);
