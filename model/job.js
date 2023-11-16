@@ -53,6 +53,10 @@ const jobSchema = new schema({
     type: Number,
     required: true,
   },
+  location: {
+    type: String,
+    required: true,
+  },
   tags: {
     type: Array,
     required: true,
