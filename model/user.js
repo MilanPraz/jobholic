@@ -45,6 +45,13 @@ const UserSchema = new schema({
   },
   image: {
     type: String,
+    required: true,
+    validate: {
+      validator: function (value) {
+        if (value === "undefined") return false;
+      },
+      message: "Please Select a Photo",
+    },
     default:
       "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
   },
