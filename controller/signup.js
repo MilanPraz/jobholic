@@ -33,7 +33,8 @@ const signup = async (req, res, next) => {
     // console.log(uploadedResponse);
     // console.log("bruhh");
 
-    // // console.log(req.body);
+    console.log("req.body hai", req.body);
+    console.log("req.file hai ", req.file);
 
     const value = signupSchema.validate(req.body, {
       abortEarly: false,
