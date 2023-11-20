@@ -21,7 +21,7 @@ const signupSchema = joi.object({
 const signup = async (req, res, next) => {
   try {
     //cloudinary
-
+    console.log("hello");
     // const fileStr = req.files.image;
     // const uploadedResponse = await cloudinary.uploader.upload(
     //   fileStr.tempFilePath,
