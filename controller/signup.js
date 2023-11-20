@@ -21,7 +21,7 @@ const signupSchema = joi.object({
 const signup = async (req, res, next) => {
   try {
     //cloudinary
-    console.log("hello");
+
     // const fileStr = req.files.image;
     // const uploadedResponse = await cloudinary.uploader.upload(
     //   fileStr.tempFilePath,
@@ -32,11 +32,7 @@ const signup = async (req, res, next) => {
     // );
     // console.log(uploadedResponse);
     // console.log("bruhh");
-    console.log(req.file);
-    console.log(req.file === "undefined");
-    if (req.file == "undefined") {
-      return res.status(400).send("Please add a photo");
-    }
+
     // // console.log(req.body);
 
     const value = signupSchema.validate(req.body, {
@@ -78,7 +74,7 @@ const signup = async (req, res, next) => {
     delete userInfoWithoutPW.password;
     delete userInfoWithoutPW.repeat_password;
     user.save();
-    console.log("user yeta xa", user);
+
     await res.status(200).send(userInfoWithoutPW);
   } catch (err) {
     next(err);
