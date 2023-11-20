@@ -32,7 +32,7 @@ const signup = async (req, res, next) => {
     // );
     // console.log(uploadedResponse);
     // console.log("bruhh");
-    // console.log(req.file);
+    console.log(req.file);
     // // console.log(req.body);
 
     const value = signupSchema.validate(req.body, {
@@ -74,7 +74,7 @@ const signup = async (req, res, next) => {
     delete userInfoWithoutPW.password;
     delete userInfoWithoutPW.repeat_password;
     user.save();
-    // console.log(user);
+    console.log("user yeta xa", user);
     await res.status(200).send(userInfoWithoutPW);
   } catch (err) {
     next(err);
