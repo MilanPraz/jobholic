@@ -33,6 +33,9 @@ const signup = async (req, res, next) => {
     // console.log(uploadedResponse);
     // console.log("bruhh");
     console.log(req.file);
+    if (req.file === "undefined") {
+      return res.status(400).send("Please add a photo");
+    }
     // // console.log(req.body);
 
     const value = signupSchema.validate(req.body, {
