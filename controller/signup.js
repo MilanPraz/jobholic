@@ -13,7 +13,7 @@ const signupSchema = joi.object({
     .min(8)
     .required(),
   repeat_password: joi.ref("password"),
-  image: joi.string().alphanum().required(),
+  image: joi.string().alphanum(),
   email: joi
     .string()
     .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } }),
