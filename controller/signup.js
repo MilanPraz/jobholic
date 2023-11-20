@@ -36,7 +36,7 @@ const signup = async (req, res, next) => {
     console.log("req.body hai", req.body);
     console.log("req.file hai ", req.file);
     if (req.body.image === "null") {
-      res.status(200).send("please add a image");
+      throw new Error("please add a image");
     }
 
     const value = signupSchema.validate(req.body, {
