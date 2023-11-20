@@ -48,7 +48,7 @@ const UserSchema = new schema({
     required: true,
     validate: {
       validator: function (value) {
-        if (value === "undefined") return false;
+        if (value === "undefined" || "null") return false;
       },
       message: "Please Select a Photo",
     },
