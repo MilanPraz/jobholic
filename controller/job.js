@@ -34,7 +34,7 @@ const getJob = async (req, res, next) => {
       {
         //match work as find
         $match: {
-          title: RegExp(search, "i"),
+          title: RegExp(search, "i"), // here i is for case sensitive  & RegExp create regular expression object
 
           job_type: RegExp(jobType, "i"),
           category: RegExp(jobCategory, "i"),
