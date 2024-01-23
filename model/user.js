@@ -10,6 +10,7 @@ const UserSchema = new schema({
   email: {
     type: String,
     required: true,
+    unique: true,
     //custom validator
     // validate: {
     //   validator: async function (value) {
